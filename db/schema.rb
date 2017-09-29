@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 20170929214943) do
   end
 
   create_table "inventorys", force: :cascade do |t|
-    t.integer "in_stock"
-    t.string "store_name"
     t.integer "shoe_id"
     t.boolean "available"
     t.boolean "clearance"
     t.decimal "price", precision: 6, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "in_stock"
+    t.string "store_name"
   end
 
   create_table "shoes", force: :cascade do |t|
