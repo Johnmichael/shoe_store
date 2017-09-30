@@ -19,14 +19,21 @@ RSpec.configure do |config|
   end
 
   config.after(:each) do
-    Store.all().each() do |tag|
-      store.destroy()
+    Shoe.all().each() do |tag|
+      shoe.destroy()
     end
   end
 
   config.after(:each) do
-    Shoe.all().each() do |recipe|
-      shoe.destroy()
+    Inventory.all().each() do |recipe|
+      inventory.destroy()
     end
   end
+
+  config.after(:each) do
+    Store.all().each() do |step|
+      store.destroy()
+    end
+  end
+
 end
