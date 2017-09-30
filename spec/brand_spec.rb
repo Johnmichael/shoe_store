@@ -1,1 +1,7 @@
 require('spec_helper')
+
+describe(Brand) do
+  it {should have_many(:shoes)}
+  it {should have_many(:inventories)}
+  it {should have_many(:stores)}
+end
