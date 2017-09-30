@@ -19,12 +19,6 @@ RSpec.configure do |config|
   end
 
   config.after(:each) do
-    Shoe.all().each() do |tag|
-      shoe.destroy()
-    end
-  end
-
-  config.after(:each) do
     Inventory.all().each() do |recipe|
       inventory.destroy()
     end
