@@ -10,47 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170930010647) do
+ActiveRecord::Schema.define(version: 20170930014404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "brands", force: :cascade do |t|
     t.string "brand"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "brands_shoes", force: :cascade do |t|
-    t.integer "brand_id"
-    t.integer "shoe_id"
+    t.decimal "price", precision: 6, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "inventories", force: :cascade do |t|
-    t.boolean "available"
-    t.boolean "clearance"
-    t.decimal "price", precision: 6, scale: 2
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "in_stock"
-    t.string "store_name"
-    t.integer "brands_shoes_id"
-  end
-
-  create_table "shoes", force: :cascade do |t|
+    t.integer "store_id"
     t.integer "brand_id"
-    t.boolean "gender"
-    t.decimal "size", precision: 4, scale: 1
-    t.string "shoe"
+    t.boolean "available"
+    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "stores", force: :cascade do |t|
     t.string "store"
-    t.integer "inventory_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
