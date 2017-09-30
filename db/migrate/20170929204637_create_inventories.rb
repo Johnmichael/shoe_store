@@ -1,6 +1,6 @@
-class CreateInventorys < ActiveRecord::Migration[5.1]
+class CreateInventories < ActiveRecord::Migration[5.1]
   def change
-    create_table(:inventorys) do |t|
+    create_table(:inventories) do |t|
       t.column(:shoe_id, :integer)
       t.column(:available, :boolean)
       t.column(:clearance, :boolean)

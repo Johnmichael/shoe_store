@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170929214943) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "inventorys", force: :cascade do |t|
+  create_table "inventories", force: :cascade do |t|
     t.integer "shoe_id"
     t.boolean "available"
     t.boolean "clearance"
